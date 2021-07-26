@@ -3,7 +3,7 @@
  * _printf - Function to print strings and characters in console.
  *
  * Return: Always a int equivalent to the print length.
- * @fotmat: is a char pointer to a string that takes to print.
+ * @format: is a char pointer to a string that takes to print.
  */
 int _printf(const char *format, ...)
 {
@@ -35,5 +35,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(any);
 	_putchar('\n');
-	return(i);
+	return (i);
 }
