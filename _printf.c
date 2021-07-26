@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 
 	print_t p[] = {
 		{"c", print_char},
+		{"s", print_string},
 		{NULL, NULL}
 	};
 	va_start(any, format);
