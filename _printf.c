@@ -23,10 +23,14 @@ int _printf(const char *format, ...)
 			for (j = 0; p[j].string != NULL; j++)
 			{
 				if (format[i + 1] == *(p[j].string))
+				{
 					p[j].fun(any);
+					format++;
+				}
 			}
 		}
-		_putchar(format[i]);
+		else
+			_putchar(format[i]);
 	}
 	va_end(any);
 	_putchar('\n');
