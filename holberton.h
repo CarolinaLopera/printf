@@ -1,6 +1,7 @@
 #ifndef _HOLBERTON_H
 #define _HOLBERTON_H
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct print - This structure takes arguments to the create a object.
@@ -10,11 +11,13 @@
  */
 typedef struct print
 {
-    char string;
-    int (*fun)(va_list);
+    char *string;
+    void (*fun)(va_list any);
 } print_t;
 
 int _printf(const char *format, ...);
+void print_char(va_list any);
+
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
