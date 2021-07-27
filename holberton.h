@@ -20,6 +20,7 @@ int _printf(const char *format, ...);
 int print_char(va_list any);
 int print_string(va_list any);
 int print_percent(va_list any);
+int print_int(va_list any);
 
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
