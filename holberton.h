@@ -13,12 +13,13 @@
 typedef struct print
 {
     char *string;
-    void (*fun)(va_list any);
+    int (*fun)(va_list any);
 } print_t;
 
 int _printf(const char *format, ...);
-void print_char(va_list any);
-void print_string(va_list any);
+int print_char(va_list any);
+int print_string(va_list any);
+int print_percent(va_list any);
 
 int _putchar(char c);
 char *_strcat(char *dest, char *src);

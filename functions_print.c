@@ -5,9 +5,10 @@
  * Return: Always void.
  * @any: is a char that takes to print.
  */
-void print_char(va_list any)
+int print_char(va_list any)
 {
 	_putchar(va_arg(any, int));
+	return (0);
 }
 
 /**
@@ -16,7 +17,8 @@ void print_char(va_list any)
  * Return: Always void.
  * @any: is a char that takes to print.
  */
-void print_string(va_list any)
+
+int print_string(va_list any)
 {
 	int i, j;
 	char *str;
@@ -31,4 +33,22 @@ void print_string(va_list any)
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
+	return (0);
+}
+
+/**
+ * print_percent - Function to print string in console.
+ *
+ * Return: Always void.
+ * @any: is a char that takes to print.
+ */
+
+int print_percent(va_list any)
+{
+	char a;
+	(void)any;
+
+	a = '%';
+	_putchar(a);
+	return(0);
 }

@@ -7,12 +7,14 @@
  */
 int _printf(const char *format, ...)
 {
+	
 	int i, j;
 	va_list any;
 
 	print_t p[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 	va_start(any, format);
