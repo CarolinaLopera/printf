@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	
 	int i, j;
 	va_list any;
+	int len = _strlen(format);
 
 	print_t p[] = {
 		{"c", print_char},
@@ -27,7 +28,8 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == *(p[j].string))
 				{
-					p[j].fun(any);
+					len += p[j].fun(any);
+					len -= 2;
 					format++;
 				}
 			}
@@ -36,6 +38,5 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 	}
 	va_end(any);
-	_putchar('\n');
-	return (i);
+	return (len);
 }

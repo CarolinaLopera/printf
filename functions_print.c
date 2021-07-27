@@ -8,7 +8,7 @@
 int print_char(va_list any)
 {
 	_putchar(va_arg(any, int));
-	return (0);
+	return (1);
 }
 
 /**
@@ -30,10 +30,11 @@ int print_string(va_list any)
 	{
 		for (j = 0; n[j] != '\0'; j++)
 			_putchar(n[j]);
+		return (j);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
-	return (0);
+	return (i);
 }
 
 /**
@@ -50,5 +51,5 @@ int print_percent(va_list any)
 
 	a = '%';
 	_putchar(a);
-	return(0);
+	return(1);
 }
