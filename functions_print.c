@@ -1,17 +1,5 @@
 #include "holberton.h"
 
-void pr_int(int n)
-{
-    if (n < 0)
-    {
-        _putchar('-');
-        n = -n;
-    }
-    if (n / 10 != 0)
-        pr_int(n / 10);
-    _putchar((n % 10) + '0');
-}
-
 /**
  * print_char - Function to print characters in console.
  *
@@ -56,7 +44,6 @@ int print_string(va_list any)
  * Return: Always void.
  * @any: is a char that takes to print.
  */
-
 int print_percent(va_list any)
 {
 	char a;
@@ -65,16 +52,4 @@ int print_percent(va_list any)
 	a = '%';
 	_putchar(a);
 	return (1);
-}
-
-/**
- * print_char - Function to print characters in console.
- *
- * Return: Always void.
- * @any: is a char that takes to print.
- */
-int print_int(va_list any)
-{
-	pr_int(va_arg(any, int));
-	return (0);
 }
