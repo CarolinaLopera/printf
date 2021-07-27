@@ -7,13 +7,13 @@
 /**
  * struct print - This structure takes arguments to the create a object.
  *
- * @strings: Is a strings that get the structure.
+ * @string: Is a strings that get the structure.
  * @fun: Is a function associated that call the structure.
  */
 typedef struct print
 {
-    char *string;
-    int (*fun)(va_list any);
+	char *string;
+	int (*fun)(va_list any);
 } print_t;
 
 int _printf(const char *format, ...);

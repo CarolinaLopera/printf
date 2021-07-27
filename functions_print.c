@@ -51,5 +51,5 @@ int print_percent(va_list any)
 
 	a = '%';
 	_putchar(a);
-	return(1);
+	return (1);
 }

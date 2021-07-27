@@ -7,7 +7,6 @@
  */
 int _printf(const char *format, ...)
 {
-	
 	int i, j;
 	va_list any;
 	int len = _strlen(format);
