@@ -10,8 +10,6 @@ int print_char(va_list any)
 {
 	int a = va_arg(any, int);
 
-	if (a < 0 || a > 255)
-		return (1);
 	_putchar(a);
 	return (1);
 }
