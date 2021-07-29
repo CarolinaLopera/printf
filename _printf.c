@@ -9,15 +9,13 @@ int _printf(const char *format, ...)
 {
 	int i, j, bool = 0, len;
 	va_list any;
-
 	print_t p[] = {
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
 		{"i", print_int},
 		{"d", print_int},
-		{NULL, NULL}
-	};
+		{NULL, NULL}};
 	if (format == NULL)
 		return (0);
 	len = _strlen(format);
@@ -26,13 +24,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			for (j = 0; p[j].string != NULL; j++)
 			{
 				if (format[i + 1] == *(p[j].string))
 				{
 					len += p[j].fun(any);
-					len -= 2, i++, bool = 1;
-				}
+					len -= 2, i++, bool = 1; }
 			}
 			if (bool == 0)
 				_putchar(format[i]);

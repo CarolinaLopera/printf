@@ -8,8 +8,11 @@
  */
 int print_char(va_list any)
 {
-	_putchar(va_arg(any, int));
-	return (1);
+    int a = va_arg(any, int);
+    if (a < 0 || a > 255)
+        return (1);
+    _putchar(a);
+    return (1);
 }
 
 /**
@@ -21,14 +24,19 @@ int print_char(va_list any)
 
 int print_string(va_list any)
 {
-	int i;
+	int i, j;
 	char *str;
+	char *n;
 
-	str = va_arg(any, char *);
-	if (str == NULL)
-	{
-		return (0);
-	}
+    n = "(null)";
+    str = va_arg(any, char *);
+    if (str == NULL)
+    {
+        for (j = 0; n[j] != '\0'; j++)
+            _putchar(n[j]);
+        return (j);
+    }
+
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 	return (i);
