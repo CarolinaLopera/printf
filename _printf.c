@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{"i", print_int},
 		{"d", print_int},
 		{NULL, NULL}};
+
 	if (format == NULL)
 		return (0);
 	len = _strlen(format);
@@ -24,7 +25,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
+			if (format[i + 1] == '\0' || (format[i + 1] == 32 && format[i + 1] == '\0'))
 				return (-1);
 			for (j = 0; p[j].string != NULL; j++)
 			{
