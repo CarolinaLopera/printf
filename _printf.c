@@ -7,9 +7,8 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i, j, bool = 0, len;
 	va_list any;
-	int len = _strlen(format);
 
 	print_t p[] = {
 		{"c", print_char},
@@ -19,8 +18,10 @@ int _printf(const char *format, ...)
 		{"d", print_int},
 		{NULL, NULL}
 	};
+	if (format == NULL)
+		return (0);
+	len = _strlen(format);
 	va_start(any, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -30,10 +31,11 @@ int _printf(const char *format, ...)
 				if (format[i + 1] == *(p[j].string))
 				{
 					len += p[j].fun(any);
-					len -= 2;
-					format++;
+					len -= 2, i++, bool = 1;
 				}
 			}
+			if (bool == 0)
+				_putchar(format[i]);
 		}
 		else
 			_putchar(format[i]);
