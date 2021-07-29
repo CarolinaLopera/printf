@@ -21,17 +21,13 @@ int print_char(va_list any)
 
 int print_string(va_list any)
 {
-	int i, j;
+	int i;
 	char *str;
-	char *n;
 
-	n = "(null)";
 	str = va_arg(any, char *);
 	if (str == NULL)
 	{
-		for (j = 0; n[j] != '\0'; j++)
-			_putchar(n[j]);
-		return (j);
+		return (0);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);

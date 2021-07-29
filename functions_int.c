@@ -29,7 +29,7 @@ int print_int(va_list any)
 {
 	int count = 0;
 	int n = va_arg(any, int);
-	int nc, i;
+	int nc, i = 0;
 
 	if (n < 0)
 		count++;
