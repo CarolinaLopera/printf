@@ -1,6 +1,9 @@
 # _printf
 _printf is a project that seeks to behave the same as the original printf function.
 
+The following diagram describes the mechanism of the _printf function.
+![Flowchart](https://github.com/Shirley-Patricia/printf/blob/main/diag_printf.png)
+
 ## Start
 To obtain a copy of the source code you can access this repository [GitHub](https://github.com/Shirley-Patricia/printf) and download a compressed file.
 
